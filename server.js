@@ -32,6 +32,13 @@ var tables = [
     name: "ben",
     email: "ben@abc.com",
     phone: 111111902
+  },
+  {
+    id: "4",
+    name: "",
+    email: "",
+    phone: "",
+    status: "available"
   }
 ];
 
@@ -40,11 +47,16 @@ var tables = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "homepage.html"));
 });
 
 app.get("/reservation", function(req, res) {
-  res.sendFile(path.join(__dirname, "reservation.html"));
+  res.sendFile(path.join(__dirname, "reservationforms.html"));
+});
+
+app.get("/tables", function(req, res) {
+  console.log("tables hit");
+  res.sendFile(path.join(__dirname, "reservationviews.html"));
 });
 
 // Displays all characters
